@@ -22,3 +22,9 @@ Set BEFORE promotion begins; see OHD project instructions. Proposed: ≥30 signu
 - No trackers, no cookies. Honeypot field for bots.
 - `prefers-reduced-motion` respected (terminal animation renders static).
 - Part of the OHD project's PURSUE-CONDITIONAL validation for the Skool community lead (scored 2026-07-16).
+## Book: It Ran While I Slept
+
+The free material from the book *It Ran While I Slept: How to Run AI Agents Unattended, Safely*:
+
+- The wrapper script the book is built around: `scripts/v1/phaseC_overnight_orchestrator.ps1` (annotated in Appendix B).
+- The Windows setup files from Appendix C: `book/windows-setup/`.
