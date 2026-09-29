@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The pre-run checklist — Build With AI Hub</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--umber:#14110F;--paper:#EDE6DA;--amber:#FFB454;--ash:#8A8378;--line:#2A2520;--card:#1B1714}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--umber);color:var(--paper);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--amber)}
+.wrap{max-width:760px;margin:0 auto;padding:40px 24px 56px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,4vw,38px);line-height:1.1;margin:10px 0 12px}
+.intro{color:var(--ash);margin-bottom:28px}
+h2{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;margin:28px 0 10px}
+h2 span{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:13px;color:var(--ash)}
+ul{list-style:none}
+li{padding:7px 0 7px 34px;position:relative;border-bottom:1px solid var(--line)}
+li .cb{position:absolute;left:0;top:9px;width:18px;height:18px;border:1.5px solid var(--amber);border-radius:3px}
+code{font-family:'IBM Plex Mono',monospace;font-size:14px}
+.morning li{padding-left:0}
+.bar{display:flex;gap:18px;flex-wrap:wrap;margin-top:36px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+button{background:var(--amber);color:var(--umber);border:none;border-radius:8px;padding:10px 18px;font-family:'Syne',sans-serif;font-weight:800;cursor:pointer}
+.src{margin-top:26px;font-size:13px;color:var(--ash)}
+@media print{
+  :root{--umber:#fff;--paper:#111;--ash:#444;--line:#ccc;--amber:#000}
+  .bar{display:none}
+  .wrap{padding:0}
+  li{padding-top:5px;padding-bottom:5px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">Build W/ AI Hub · free resource</span>
+  <h1>The pre-run checklist</h1>
+  <p class="intro">Print this page. Go through it the evening before, while you are awake and thinking clearly. If you cannot tick a line, you are not ready to leave.</p>
+
+  <h2>The job <span>Rule 1: resumable phases</span></h2>
+  <ul>
+    <li><span class="cb"></span>The job is split into phases, and each phase saves its progress somewhere the next run can find it.</li>
+    <li><span class="cb"></span>Running a phase again is safe: it skips what is already done instead of doing it twice.</li>
+    <li><span class="cb"></span>Anything that fails goes onto a retry list, not into the void.</li>
+    <li><span class="cb"></span>I have run the whole thing once, on a small input, while awake.</li>
+  </ul>
+
+  <h2>The numbers <span>Rule 2: the provider's number</span></h2>
+  <ul>
+    <li><span class="cb"></span>For every phase I know which system holds the real count, and the wrapper reads that number, not the agent's summary.</li>
+    <li><span class="cb"></span>I have written down what "done" means as a number, before the run, so the morning is a comparison and not an opinion.</li>
+  </ul>
+
+  <h2>The receipt <span>Rule 3</span></h2>
+  <ul>
+    <li><span class="cb"></span>The report is written in the block that always runs (a <code>finally</code> block, or your language's equivalent), so an error still produces one.</li>
+    <li><span class="cb"></span>Its first line is one word: COMPLETE, PARTIAL, HALTED or CRASHED.</li>
+    <li><span class="cb"></span>It lists what was skipped, with the exact command to fix each gap.</li>
+    <li><span class="cb"></span>It records what the night cost.</li>
+    <li><span class="cb"></span>I know its limit: a power cut or a killed process means no receipt, and silence is the only clue.</li>
+  </ul>
+
+  <h2>While it runs <span>Rule 4: silence is not success</span></h2>
+  <ul>
+    <li><span class="cb"></span>The wrapper, not the agent, sends a heartbeat on a schedule I have written down, to somewhere I can see from my phone.</li>
+    <li><span class="cb"></span>I know what a missing heartbeat means: the run has stopped, not finished.</li>
+  </ul>
+
+  <h2>The limits <span>Rule 5: decide before you leave</span></h2>
+  <ul>
+    <li><span class="cb"></span>Two spend caps: one in my script, and one at the provider's account.</li>
+    <li><span class="cb"></span>The write boundary is a mechanism, not a sentence in the prompt. I have tested it refusing a write outside, allowing a write inside, and not blocking the tool's own folders.</li>
+    <li><span class="cb"></span>The permission mode is the one I chose, not whatever the install defaulted to.</li>
+    <li><span class="cb"></span>There is a written stop condition: when the run must stop instead of trying again.</li>
+    <li><span class="cb"></span>The instructions tell the agent what a refusal means: note it, skip the item, move on, and never look for another way round.</li>
+    <li><span class="cb"></span>The computer is set not to sleep or restart overnight.</li>
+  </ul>
+
+  <h2>The morning <span>five minutes</span></h2>
+  <p class="intro" style="margin-bottom:8px">Read the receipt in this order: the status word, the provider's number, the gaps, the money.</p>
+  <ul class="morning">
+    <li><strong>COMPLETE:</strong> check the number against what you expected anyway. Ten seconds.</li>
+    <li><strong>PARTIAL:</strong> run the fix-it commands one at a time, today, and watch the first one.</li>
+    <li><strong>HALTED:</strong> find out why the cap was reached before you raise it.</li>
+    <li><strong>CRASHED:</strong> read the error on the first line, then the log. Do not re-run first.</li>
+  </ul>
+  <p class="intro" style="margin-top:12px">If you don't understand what happened, don't re-run.</p>
+
+  <p class="src">From <em>It Ran While I Slept: How to Run AI Agents Unattended, Safely</em> by Ethan Voss. The book explains each rule with a real overnight run: <a href="https://books2read.com/u/4DLP87">every store in one link</a>.</p>
+  <div class="bar">
+    <button onclick="window.print()">Print this page</button>
+    <a href="./#free">More free resources →</a>
+  </div>
+</div>
+<script data-goatcounter="https://buildwithaihub.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

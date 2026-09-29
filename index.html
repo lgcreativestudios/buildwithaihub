@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build With AI Hub — Claude-Native Agentic Automation (Founding Waitlist)</title>
-<meta name="description" content="A private community for builders shipping Claude-native AI agents and automations — content factories, agent pipelines, real systems you own. Join the founding waitlist.">
+<title>The pre-run checklist — Build With AI Hub</title>
+<meta name="description" content="A free one-page checklist for AI agents you leave running overnight: 19 checks to do the evening before. Plus free scripts and setup files from Build With AI Hub.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -107,6 +107,15 @@ form.waitlist button:focus-visible{outline:2px solid var(--paper);outline-offset
 .wedge p{max-width:64ch;font-size:18px}
 .wedge strong{color:var(--amber);font-weight:600}
 .wedge .src{display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ash)}
+/* resources */
+.resources{padding:64px 0 8px}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.res{border:1px solid var(--line);border-radius:10px;padding:24px 22px;background:var(--card);display:flex;flex-direction:column}
+.res .tag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal)}
+.res h3{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin:10px 0 8px}
+.res p{font-size:14.5px;color:var(--ash);flex:1}
+.res a.go{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none}
+.resources h2{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;margin:10px 0 28px}
 /* modules */
 .modules{padding:72px 0}
 .modules h2,.perks h2{
@@ -139,7 +148,7 @@ footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 footer.site p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ash)}
 @media (max-width:880px){
   .hero .wrap{grid-template-columns:1fr;gap:44px}
-  .mod-grid,.perk-list{grid-template-columns:1fr}
+  .mod-grid,.perk-list,.res-grid{grid-template-columns:1fr}
   .hero{padding:52px 0 44px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -153,60 +162,79 @@ footer.site p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--a
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/">BUILD<span>W/</span>AI HUB</a>
-    <span class="hdr-note">founding cohort · waitlist open</span>
+    <span class="hdr-note">Real runs. Real numbers.</span>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Founding member waitlist</span>
-      <h1>Build AI agents you actually <em>own</em>.</h1>
-      <p class="sub">A private community for builders shipping Claude-native automation — content factories, agent pipelines, real unattended systems — with no drag-and-drop platform between you and the machine.</p>
+      <span class="eyebrow">Free · one page</span>
+      <h1>The pre-run checklist for agents you leave running <em>overnight</em>.</h1>
+      <p class="sub">19 checks to do the evening before, so the morning is a comparison, not a surprise. It's the checklist from <em>It Ran While I Slept</em>, free. Leave your email and the download link appears straight away.</p>
       <form class="waitlist" id="wl">
-        <label for="email">Get first access when the doors open</label>
+        <label for="email">Your email</label>
         <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
         <input type="text" id="goal" name="what_would_you_automate" placeholder="What would you automate first? (optional)">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <button type="submit" id="wl-btn">Join the waitlist</button>
+        <button type="submit" id="wl-btn">Get the checklist</button>
         <p class="form-msg" id="wl-msg" role="status"></p>
-        <p class="fineprint">No spam. One email when the founding cohort opens, a few build logs before that.</p>
+        <p class="fineprint">No spam. You'll also get build logs, first word when the community opens, and every free resource we add. Reply to any email to stop them.</p>
       </form>
     </div>
-    <div class="term" aria-label="Example agent run">
+        <div class="term" aria-label="Preview of the pre-run checklist">
       <div class="term-bar">
         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="term-title">agent — content-factory run</span>
+        <span class="term-title">pre-run-checklist.md — preview</span>
       </div>
       <div class="term-body" id="term">
-        <div class="tline"><span class="p">$</span> claude -p "produce today's video"</div>
-        <div class="tline"><span class="dim">▸ researching topic ............</span> done</div>
-        <div class="tline"><span class="dim">▸ writing script (612 words) ...</span> done</div>
-        <div class="tline"><span class="dim">▸ rendering voiceover ..........</span> done</div>
-        <div class="tline"><span class="dim">▸ assembling video (ffmpeg) ....</span> done</div>
-        <div class="tline"><span class="dim">▸ uploading via YouTube API ....</span> done</div>
-        <div class="tline"><span class="ok">✓ published</span> — total 11m 32s · human input: 0</div>
+        <div class="tline"><span class="p">## The job</span> <span class="dim">(Rule 1: resumable phases)</span></div>
+        <div class="tline"><span class="dim">[ ]</span> The job is split into phases, and each phase saves its progress somewhere the next run can find it.</div>
+        <div class="tline"><span class="dim">[ ]</span> Running a phase again is safe: it skips what is already done.</div>
+        <div class="tline"><span class="dim">[ ]</span> Anything that fails goes onto a retry list, not into the void.</div>
+        <div class="tline"><span class="dim">[ ]</span> I have run the whole thing once, on a small input, while awake.</div>
+        <div class="tline"><span class="ok">+ 15 more checks</span> <span class="dim">· numbers, receipt, heartbeat, limits</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="wedge">
+<section class="resources" id="free">
   <div class="wrap">
-    <p>Searches for <strong>"claude agents" are up 115%</strong> this year, while every major no-code workflow term is down 54–72%. The tooling era is ending. The <strong>orchestration era</strong> is here — and orchestration is a skill, not a subscription.</p>
-    <span class="src">source: Google search volume data, 2026</span>
+    <span class="eyebrow">Free resources</span>
+    <h2>Everything from the videos and the book that you can use today.</h2>
+    <div class="res-grid">
+      <article class="res">
+        <span class="tag">Free · for your email</span>
+        <h3>The pre-run checklist</h3>
+        <p>19 checks for the evening before an unattended run: resumable phases, the provider's number, the receipt, the heartbeat and the limits. One printable page.</p>
+        <a class="go" href="#wl">Get it above →</a>
+      </article>
+      <article class="res">
+        <span class="tag">Free · no signup</span>
+        <h3>The overnight wrapper script</h3>
+        <p>The PowerShell wrapper from the video, the actual code, with a header telling you which lines to adapt.</p>
+        <a class="go" href="https://github.com/lgcreativestudios/buildwithaihub/blob/main/scripts/v1/phaseC_overnight_orchestrator.ps1">View on GitHub →</a>
+      </article>
+      <article class="res">
+        <span class="tag">Free · no signup</span>
+        <h3>Windows setup files</h3>
+        <p>Ask-first settings and a write guard for Claude Code on Windows, from the book's setup appendix.</p>
+        <a class="go" href="https://github.com/lgcreativestudios/buildwithaihub/tree/main/book/windows-setup">View on GitHub →</a>
+      </article>
+    </div>
   </div>
 </section>
 
 <section class="modules">
   <div class="wrap">
-    <span class="eyebrow">What you'll build</span>
+    <span class="eyebrow">Next: the community</span>
     <h2>The curriculum ships in build order.</h2>
     <div class="mod-grid">
       <article class="mod">
         <span class="mno">MODULE 01</span>
         <h3>The Content Factory</h3>
-        <p>A faceless YouTube channel run end-to-end by Claude Code — research, script, voiceover, video assembly, upload. The channel that markets this community is the same system you'll learn to build. Proof first, theory second.</p>
+        <p>A faceless YouTube channel, being built in public, one video at a time: research, script, voiceover, video assembly, upload. Proof first, theory second.</p>
       </article>
       <article class="mod">
         <span class="mno">MODULE 02</span>
@@ -241,7 +269,7 @@ footer.site p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--a
       </div>
     </div>
     <div class="cta-bottom">
-      <a href="#wl">Join the founding waitlist</a>
+      <a href="#wl">Join the waitlist</a>
     </div>
   </div>
 </section>
@@ -249,7 +277,7 @@ footer.site p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--a
 <footer class="site">
   <div class="wrap">
     <p>BUILD W/ AI HUB · © 2026</p>
-    <p>a community for Claude-native builders</p>
+    <p>Real runs. Real numbers.</p>
   </div>
 </footer>
 
@@ -292,7 +320,7 @@ var W3F_KEY = "b7a02d09-2da7-4522-a513-f955c7cf6397";
       what_would_you_automate: document.getElementById('goal').value || '(not answered)'
     };
     btn.disabled = true;
-    btn.textContent = 'Joining…';
+    btn.textContent = 'Sending…';
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
@@ -301,16 +329,18 @@ var W3F_KEY = "b7a02d09-2da7-4522-a513-f955c7cf6397";
       if (res.success) {
         form.querySelectorAll('input,button').forEach(function(el){ el.style.display = 'none'; });
         msg.className = 'form-msg ok';
-        msg.textContent = "✓ You're on the list. Watch your inbox.";
+        msg.innerHTML = '✓ You\'re on the list. <a href="checklist.html">Download the checklist</a>';
+        if (window.goatcounter && window.goatcounter.count) { window.goatcounter.count({path: 'signup', title: 'Waitlist signup', event: true}); }
       } else { throw new Error(res.message || 'failed'); }
     }).catch(function(){
       btn.disabled = false;
-      btn.textContent = 'Join the waitlist';
+      btn.textContent = 'Get the checklist';
       msg.className = 'form-msg err';
       msg.textContent = 'Something broke — try again in a minute.';
     });
   });
 })();
 </script>
+<script data-goatcounter="https://buildwithaihub.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
